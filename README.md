@@ -179,6 +179,7 @@
             box-shadow: 0 20px 30px rgba(0,0,0,0.15);
             border: 5px solid #fff;
             transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 100%;
         }
 
         .hero-image img:hover {
@@ -479,29 +480,82 @@
             margin-top: 50px;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero .container {
-                flex-direction: column-reverse;
-                text-align: center;
+        /* Images responsives */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== MEDIA QUERIES POUR MOBILE ===== */
+        /* Version téléphone portable (max-width: 600px) - Mode portrait */
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
             }
 
-            .hero-content p {
-                margin: 0 auto 30px;
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Navigation */
+            nav {
+                padding: 15px 0;
+            }
+
+            .logo {
+                font-size: 1.2rem;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
+            /* Hero Section */
+            .hero {
+                padding: 40px 0;
+                margin: 10px;
             }
 
-            .contact-item {
-                width: 100%;
-                max-width: 300px;
+            .hero .container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin: 0 auto 20px;
+            }
+
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            /* Skills Section */
+            .skills {
+                padding: 40px 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .skill-category {
+                padding: 20px;
+            }
+
+            .skill-category h3 {
+                font-size: 1.3rem;
             }
 
             .skill-item {
@@ -511,6 +565,96 @@
             .skill-name {
                 width: 100%;
                 margin-bottom: 5px;
+            }
+
+            .skill-bar {
+                width: 100%;
+            }
+
+            /* About Section */
+            .about {
+                padding: 40px 0;
+                margin: 10px;
+            }
+
+            .about-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            /* Contact Section */
+            .contact {
+                padding: 40px 0;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .contact-item {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .contact-text p {
+                font-size: 0.9rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 20px 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Version téléphone en mode paysage (entre 601px et 768px) */
+        @media screen and (min-width: 601px) and (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
+            .hero .container {
+                flex-direction: row;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Version tablette (769px à 1024px) */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 900px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
         }
 
